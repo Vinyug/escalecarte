@@ -14,9 +14,8 @@
                 
         {{-- don't forget to build for production --}}
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-        @vite('resources/css/app.css')
         {{-- @livewireStyles --}}
-        {{-- <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"> --}}
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
 
     <body class="overflow-x-hidden text-custom-dark flex flex-col min-h-screen p-0 antialiased relative lg:flex">
@@ -30,20 +29,6 @@
                 
             </div>
         </div>
-       
-        {{-- <script>
-            // Gérer l'affichage du champ de montant personnalisé lorsque "Autre montant" est sélectionné
-            const montantAutreRadio = document.getElementById('montant_autre');
-            const montantPersonnaliseInput = document.getElementById('montant_personnalise');
-
-            montantAutreRadio.addEventListener('change', () => {
-                if (montantAutreRadio.checked) {
-                    montantPersonnaliseInput.classList.remove('hidden');
-                } else {
-                    montantPersonnaliseInput.classList.add('hidden');
-                }
-            });
-        </script> --}}
 
     </body>
 </html>
