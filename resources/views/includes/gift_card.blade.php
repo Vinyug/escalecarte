@@ -11,7 +11,43 @@
     </div>
 </div>
 
+
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let deprenomInput = document.getElementById('deprenom');
+        let denomInput = document.getElementById('denom');
+        let aprenomInput = document.getElementById('aprenom');
+        let anomInput = document.getElementById('anom');
+        let montantPersonnaliseInput = document.getElementById('montant_personnalise');
 
+        let senderElement = document.getElementById('sender');
+        let recipientElement = document.getElementById('recipient');
+        let amountElement = document.getElementById('amount');
 
+        function updateSender() {
+            let deprenomValue = deprenomInput.value;
+            let denomValue = denomInput.value;
+
+            senderElement.textContent = deprenomValue + ' ' + denomValue;
+        }
+
+        function updateRecipient() {
+            let aprenomValue = aprenomInput.value;
+            let anomValue = anomInput.value;
+
+            recipientElement.textContent = aprenomValue + ' ' + anomValue;
+        }
+
+        function updateAmount() {
+            let montantPersonnaliseValue = montantPersonnaliseInput.value;
+
+            amountElement.textContent = montantPersonnaliseValue + ' €';
+        }
+
+        deprenomInput.addEventListener('input', updateSender);
+        denomInput.addEventListener('input', updateSender);
+        aprenomInput.addEventListener('input', updateRecipient);
+        anomInput.addEventListener('input', updateRecipient);
+        montantPersonnaliseInput.addEventListener('input', updateAmount);
+    });
 </script>
