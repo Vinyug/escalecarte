@@ -1,4 +1,4 @@
-<div class="w-1/2 p-4">
+<div class="w-full p-4 lg:w-1/2">
     <h1 class="text-2xl font-semibold mb-4">Carte cadeau</h1>
     <form action="" method="POST">
     @csrf
