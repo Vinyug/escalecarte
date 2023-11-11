@@ -3,6 +3,7 @@
 use App\Http\Controllers\Public\PublicCarteController;
 
 Route::get('/', [PublicCarteController::class, 'create'])->name('index');
+Route::post('/carte-cadeau', [PublicCarteController::class, 'store'])->name('giftcard.store');
 
 Route::get('/home', function () {
     if (session('status')) {

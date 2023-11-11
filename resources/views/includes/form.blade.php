@@ -1,7 +1,15 @@
 <div class="w-full p-4 lg:w-1/2">
     <h1 class="text-2xl font-semibold mb-4">Carte cadeau</h1>
-    <form action="" method="POST">
+    <form method="POST" action="{{ route("giftcard.store") }}" enctype="multipart/form-data">
     @csrf
+
+        {{-- <div class="flex mb-4">
+            <input type="text" name="ref" id="ref" class="w-1/2 border mr-2 p-2 rounded" value="{{ old('ref', '') }}" placeholder="{{ trans('cruds.carte.fields.ref') }} *" required>
+            @error('ref')
+            <div class="">{{ $errors->first('ref') }}</div>
+            @enderror
+            <span class="">{{ trans('cruds.carte.fields.ref_helper') }}</span>
+        </div> --}}
 
         <div class="mb-4">
             <label for="institut_id" class="block text-lg font-semibold mb-2">{{ trans('cruds.carte.fields.institut') }} *</label>
@@ -36,7 +44,7 @@
                 <span class="">{{ trans('cruds.carte.fields.denom_helper') }}</span>
             </div>
             <div class="mb-4">
-                <input type="text" name="demail" id="demail" class="w-1/2 border mr-2 p-2 rounded" value="{{ old('demail', '') }}" placeholder="{{ trans('cruds.carte.fields.demail') }} *" required>
+                <input type="text" name="demail" id="demail" class="w-full border mr-2 p-2 rounded" value="{{ old('demail', '') }}" placeholder="{{ trans('cruds.carte.fields.demail') }} *" required>
                 @error('demail')
                 <div class="">{{ $errors->first('demail') }}</div>
                 @enderror
@@ -60,7 +68,7 @@
                 <span class="">{{ trans('cruds.carte.fields.anom_helper') }}</span>
             </div>
             <div class="mb-4">
-                <input type="text" name="amail" id="amail" class="w-1/2 border mr-2 p-2 rounded" value="{{ old('amail', '') }}" placeholder="{{ trans('cruds.carte.fields.amail') }} *" required>
+                <input type="text" name="amail" id="amail" class="w-full border mr-2 p-2 rounded" value="{{ old('amail', '') }}" placeholder="{{ trans('cruds.carte.fields.amail') }} *" required>
                 @error('amail')
                 <div class="">{{ $errors->first('amail') }}</div>
                 @enderror
@@ -79,7 +87,7 @@
             <label class="block text-lg font-semibold mb-2">Montant</label>
             
             <div class="flex space-x-4 font-semibold mb-4">
-                <div>
+                {{-- <div>
                     <input type="radio" class="peer hidden" name="montant" value="10" id="montant_10" checked>
                     <label for="montant_10" class="block cursor-pointer select-none rounded-md px-4 py-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">10€</label>
                 </div>
@@ -93,11 +101,13 @@
                     <input type="radio" class="peer hidden" name="montant" value="100" id="montant_100">
                     <label for="montant_100" class="block cursor-pointer select-none rounded-md px-4 py-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">100€</label>
                 </div>
+
                 <div class="ml-4 font-semibold">
                     <input type="radio" class="peer hidden" name="montant" value="autre" id="montant_autre">
                     <label for="montant_autre" class="block cursor-pointer select-none rounded-md px-4 py-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Autre montant</label>
-                </div>
-                <input type="text" name="montant" id="montant_personnalise" value="" class="w-32 border p-2 rounded" placeholder="Valeur">
+                </div> --}}
+
+                <input type="text" name="montant" id="montant_personnalise" value="{{ old('montant', '') }}" class="w-32 border p-2 rounded" placeholder="Valeur">
                 @error('montant')
                 <div class="">{{ $errors->first('montant') }}</div>
                 @enderror

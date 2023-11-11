@@ -9,10 +9,10 @@ use Illuminate\Http\Response;
 
 class StoreCarteRequest extends FormRequest
 {
-    public function authorize()
-    {
-        return Gate::allows('carte_create');
-    }
+    // public function authorize()
+    // {
+    //     return Gate::allows('carte_create');
+    // }
 
     public function rules()
     {
