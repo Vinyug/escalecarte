@@ -3,14 +3,6 @@
     <form method="POST" action="{{ route("giftcard.store") }}" enctype="multipart/form-data">
     @csrf
 
-        {{-- <div class="flex mb-4">
-            <input type="text" name="ref" id="ref" class="w-1/2 border mr-2 p-2 rounded" value="{{ old('ref', '') }}" placeholder="{{ trans('cruds.carte.fields.ref') }} *" required>
-            @error('ref')
-            <div class="">{{ $errors->first('ref') }}</div>
-            @enderror
-            <span class="">{{ trans('cruds.carte.fields.ref_helper') }}</span>
-        </div> --}}
-
         <div class="mb-4">
             <label for="institut_id" class="block text-lg font-semibold mb-2">{{ trans('cruds.carte.fields.institut') }} *</label>
             <select name="institut_id" id="institut_id" class="w-full border p-2 rounded" required>
