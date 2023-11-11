@@ -25,8 +25,8 @@ class StoreCarteRequest extends FormRequest
             'montant' => [
                 'required',
                 'integer',
-                'min:-2147483648',
-                'max:2147483647',
+                'min:10',
+                'max:1000',
             ],
             'aprenom' => [
                 'string',
@@ -41,7 +41,7 @@ class StoreCarteRequest extends FormRequest
                 'required',
             ],
             'amsg' => [
-                'required',
+                'string',
             ],
             'deprenom' => [
                 'string',

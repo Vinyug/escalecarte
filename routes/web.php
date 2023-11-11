@@ -1,9 +1,9 @@
 <?php
 
-// Route::redirect('/', '/login');
-Route::get('/', function () {
-    return view('index');
-});
+use App\Http\Controllers\Public\PublicCarteController;
+
+Route::get('/', [PublicCarteController::class, 'create'])->name('index');
+
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));
