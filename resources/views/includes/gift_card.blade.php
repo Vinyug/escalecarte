@@ -4,9 +4,9 @@
     <div class="relative">
         <img class="min-w-[464px]" src="{{ asset('assets/images/gift_card.png') }}" alt="tag">
         <div class="absolute top-[6.05rem] left-[6.25rem] text-lg font-bold">
-            <p class="mb-[1.25rem]" id="sender">dePrénom deNom</p>
-            <p class="mb-[1.25rem] ml-6" id="recipient">aPrénom aNom</p>
-            <p class="ml-10" id="amount">Montant €</p>
+            <p class="mb-[1.25rem]" id="sender">Prénom Nom</p>
+            <p class="mb-[1.25rem] ml-6" id="recipient">Prénom Nom</p>
+            <p class="ml-10" id="amount">- €</p>
         </div>
     </div>
 </div>
@@ -28,12 +28,18 @@
             let deprenomValue = deprenomInput.value;
             let denomValue = denomInput.value;
 
+            deprenomValue = deprenomValue.charAt(0).toUpperCase() + deprenomValue.slice(1);
+            denomValue = denomValue.toUpperCase();
+
             senderElement.textContent = deprenomValue + ' ' + denomValue;
         }
 
         function updateRecipient() {
             let aprenomValue = aprenomInput.value;
             let anomValue = anomInput.value;
+
+            aprenomValue = aprenomValue.charAt(0).toUpperCase() + aprenomValue.slice(1);
+            anomValue = anomValue.toUpperCase();
 
             recipientElement.textContent = aprenomValue + ' ' + anomValue;
         }
